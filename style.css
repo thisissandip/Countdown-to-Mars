@@ -19,7 +19,7 @@ body{
 .img-side{
     background: url(imgs/mars.jpg);
     background-repeat: no-repeat;
-    background-position: -350px center;
+    background-position: -400px center;
     background-size: cover;
     height: 100vh;
 }
@@ -162,6 +162,11 @@ footer{
 }
 
 @media only screen and (max-width:1200px){
+    .img-side{
+
+        background-position: -340px center;
+
+    }
     .head-title{
         font-size: 3rem;
     }
