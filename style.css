@@ -1,0 +1,310 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --titlefont: 'Bebas Neue', cursive;
+    --digitfont: 'Lora', serif;
+    --poppins: 'Poppins', sans-serif;
+
+}
+body{
+    overflow: hidden;
+}
+
+.parent{
+    display: grid;
+    grid-template-columns: minmax(500px, 25%) 1fr ;
+}
+
+.img-side{
+    background: url(imgs/mars.jpg);
+    background-repeat: no-repeat;
+    background-position: -350px center;
+    background-size: cover;
+    height: 100vh;
+}
+
+/* .nav-links{
+    padding: 30px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.item{
+    list-style:none;
+    font-family: var(--poppins);
+    color: grey;
+} */
+
+
+
+.head-title{
+    padding: 10px;
+    text-align: center;
+    font-family: var(--titlefont);
+    font-size: 5rem;
+    background-color: black;
+    color: white;
+}
+
+.mars{
+    color: red;
+}
+
+.container-time{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.card{
+    font-family: var(--digitfont);
+    font-size: 5rem;
+    margin: 10px;
+}
+
+
+.title{
+    position: absolute;
+    color: grey;
+    font-family: var(--poppins);
+    font-size: 1rem;
+}
+
+.quote-container{
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    padding: 30px;
+}
+
+.quote{
+    font-size: 2.5rem;
+    color: black;
+    font-family: var(--poppins);
+}
+
+.landing-date{
+    display: inline-block;
+    padding: 5px;
+    margin-top: 10px;
+    font-family: var(--titlefont);
+    font-size: 3rem;
+    color: white;
+    background-color:  rgb(16,37,80); ;
+}
+
+
+.bar{
+    position: relative;
+    margin-top: 15px;
+    height: 190px;
+    width: 100%;
+    background: linear-gradient(to bottom,grey, white)
+}
+
+.show-percentage{
+    position: absolute;
+    width: 100%;
+    left: 25px;
+    top: 10px;
+    font-size: 2rem;
+    color: white;
+    z-index:1;
+    font-family: var(--digitfont);
+    opacity: 0.5;
+}
+
+.progress{
+    position: relative;
+    height: 190px;
+    background: linear-gradient(to bottom, rgb(16,35,77), rgb(53, 91, 172));
+    overflow: hidden;
+    background-size: 100%;
+}
+
+.progress::after{
+    position: absolute;
+    content: '';
+    top:0;
+    bottom: 0;
+    left: 0;
+    right:0;
+    height: 190px;
+    opacity: 0.4;
+    background: linear-gradient(45deg, cyan 25%, rgba(0,0,0,0) 25%,  rgba(0,0,0,0) 50%,  cyan 50%, cyan 75%,  rgba(0,0,0,0) 75%,  rgba(0,0,0,0));
+    background-size: 40px 40px;
+    animation: candy 0.5s infinite linear;
+}
+
+@keyframes candy{
+    100% {
+        background-position: 40px 0;
+    }
+}
+
+footer{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: black;
+    height: 60px;
+    bottom:0;
+    font-family: var(--poppins);
+    font-size: 1.2rem;
+    color: white;
+}
+
+@media only screen and (max-width:1200px){
+    .head-title{
+        font-size: 3rem;
+    }
+
+    .card{
+        margin-top: 30px;
+        font-size: 3.5rem;
+    }
+    .title{
+        font-size: 0.8rem;
+    }
+    .quote-container{
+        margin-top: 25px;
+    }
+    .landing-date{
+        margin-top: 30px;
+    }
+    .quote{
+        font-size: 1.5rem;
+    }
+    .bar{
+        margin-top: 20px;
+    }
+
+}
+
+@media only screen and (max-width:950px){
+    .parent{
+        display: grid;
+        grid-template-columns: minmax(300px, 25%) 1fr ;
+    }
+
+    .img-side{
+        background-position: -420px center;
+    }
+
+    .card{
+        margin-top: 40px;
+    }
+
+    .head-title{
+        font-size: 3rem;
+    }
+
+    .landing-date{
+        font-size: 3rem;
+        margin-top: 25px;
+    }
+} 
+
+@media only screen and (max-width:750px){
+    body{
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+    .parent{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .img-side{
+        background-size: cover;
+        background-position: center 30px;
+    }
+
+    .img-side::after{
+        position: absolute;
+        content: '';
+        z-index: 0;
+        opacity: 0.3;
+        background-color: black;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .white-side{
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .heading{
+        position: absolute;
+        top:0;
+        width: 100%;
+    }
+
+    .head-title{
+        font-size: 2rem;
+    }
+
+    .card{
+        margin-top: -10px;
+        font-size: 3rem;
+        color: white;
+        text-shadow: 0 0 20px black;
+    }
+    .title{
+        color: blanchedalmond;
+        text-shadow: 0 0 20px black;
+    }
+
+
+    .bar,.progress,.progress::after{
+        position: absolute;
+        bottom: 0;
+        height: 120px;
+    }
+
+    .quote{
+        color: white;
+        text-shadow: 0 0 20px red;
+    }
+
+    .landing-date{
+        margin-top: 30px;
+        color: rgb(16,35,77);
+        background-color: white;
+        font-size: 1.5rem;
+    }
+
+    footer{
+        font-size: 0.7rem;
+    }
+
+}
+@media only screen and (max-width:450px){
+    .card{
+        font-size: 1.6rem;
+    }
+    .title{
+        font-size: 0.7rem;
+    }
+    .quote{
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
